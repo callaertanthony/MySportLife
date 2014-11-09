@@ -1,0 +1,4 @@
+services:
+#    msl_core.example:
+#        class: MySportLife\CoreBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

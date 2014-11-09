@@ -1,0 +1,3 @@
+msl_twig_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: MSLTwigBundle:Default:index }

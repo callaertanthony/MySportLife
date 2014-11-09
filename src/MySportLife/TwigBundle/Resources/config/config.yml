@@ -1,0 +1,7 @@
+imports:
+    - { resource: parameters.yml }
+
+twig:
+    globals:
+        app_webmaster: %app_webmaster%
+        app_application_name : %app_application_name%

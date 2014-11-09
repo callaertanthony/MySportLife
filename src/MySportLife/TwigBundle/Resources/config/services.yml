@@ -1,0 +1,4 @@
+services:
+#    msl_twig.example:
+#        class: MySportLife\TwigBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

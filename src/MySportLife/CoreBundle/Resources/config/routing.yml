@@ -1,0 +1,3 @@
+msl_core_homepage:
+    path:     /
+    defaults: { _controller: MSLCoreBundle:Default:index }

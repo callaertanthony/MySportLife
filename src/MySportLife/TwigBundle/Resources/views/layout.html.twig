@@ -1,0 +1,57 @@
+<html>
+    <head>
+        {% block head %}
+            <meta charset="utf-8" />
+            <title>{{ app_application_name }} - {% block title %}{% endblock %}</title>
+
+            <meta name="description" content="" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+            {% stylesheets
+            'bundles/msltwig/css/bootstrap.min.css'
+            'bundles/msltwig/css/bootstrap-responsive.min.css'
+            'bundles/msltwig/css/ace.min.css'
+            'bundles/msltwig/css/ace-responsive.min.css'
+            'bundles/msltwig/css/ace-skins.min.css'
+            'bundles/msltwig/css/font-awesome.min.css'
+            filter='cssrewrite'
+            %}
+            <link rel="stylesheet" href="{{ asset_url }}">
+            {% endstylesheets %}
+
+            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        {% endblock %}
+    </head>
+
+    <body>
+        {{ include("MSLTwigBundle::navbar.html.twig") }}
+
+        <div class="main-container container-fluid">
+            <a class="menu-toggler" id="menu-toggler">
+                <span class="menu-text"></span>
+            </a>
+            
+            {{ include("MSLTwigBundle::sidebar.html.twig") }}
+            
+            <div class="main-container">
+                
+            </div>
+        </div>
+        {% block javascripts %}
+            {% javascripts
+            'js/jquery.js'
+            'js/bootstrap.js'
+            'bundles/msltwig/js/ace-elements.min.js'
+            'bundles/msltwig/js/ace.min.js'
+            %}
+            <script src="{{ asset_url }}"></script>
+            <script type="text/javascript">
+                if ("ontouchend" in document)
+                    document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+            </script>
+            {% endjavascripts %}
+        {% endblock %}
+    </body>
+</html>
