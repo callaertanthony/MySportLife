@@ -1,0 +1,11 @@
+msl_user:
+    resource: "@MSLUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+msl_core:
+    resource: "@MSLCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+msl_twig:
+    resource: "@MSLTwigBundle/Resources/config/routing.yml"
+    prefix:   /

@@ -1,2 +1,6 @@
+_default:
+    path:     /login
+    defaults: { _controller: MSLUserBundle:Login:Default }
+    
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"

@@ -26,6 +26,7 @@
     </head>
 
     <body>
+        {% block body %}
         {{ include("MSLTwigBundle::navbar.html.twig") }}
 
         <div class="main-container container-fluid">
@@ -52,6 +53,7 @@
                     document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
             </script>
             {% endjavascripts %}
+        {% endblock %}
         {% endblock %}
     </body>
 </html>
