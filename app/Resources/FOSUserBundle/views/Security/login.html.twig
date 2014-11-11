@@ -1,3 +1,8 @@
+{% block fos_user_content %}
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
 <div id="login-box" class="login-box visible widget-box no-border">
     <div class="widget-body">
         <div class="widget-main">
@@ -8,18 +13,19 @@
 
             <div class="space-6"></div>
 
-            <form />
+            <form action="{{ path("fos_user_security_check") }}" method="post">
             <fieldset>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
                 <label>
                     <span class="block input-icon input-icon-right">
-                        <input type="text" class="span12" placeholder="Username" />
+                        <input type="text" name="_username" class="span12" placeholder="Username" value="{{ last_username }}" required="required" />
                         <i class="icon-user"></i>
                     </span>
                 </label>
 
                 <label>
                     <span class="block input-icon input-icon-right">
-                        <input type="password" class="span12" placeholder="Password" />
+                        <input type="password" name="_password" class="span12" placeholder="Password" required="required" />
                         <i class="icon-lock"></i>
                     </span>
                 </label>
@@ -28,11 +34,11 @@
 
                 <div class="clearfix">
                     <label class="inline">
-                        <input type="checkbox" />
+                        <input type="checkbox" name="_remember_me" value="on"/>
                         <span class="lbl"> Remember Me</span>
                     </label>
 
-                    <button onclick="return false;" class="width-35 pull-right btn btn-small btn-primary">
+                    <button class="width-35 pull-right btn btn-small btn-primary" name="_submit">
                         <i class="icon-key"></i>
                         Login
                     </button>
@@ -80,3 +86,4 @@
         </div>
     </div><!--/widget-body-->
 </div>
+{% endblock fos_user_content %}

@@ -23,7 +23,7 @@
 
                             <div class="row-fluid">
                                 <div class="position-relative">
-                                    {% include 'MSLUserBundle:Login:login.html.twig' %}<!--/login-box-->
+                                    {% render controller("FOSUserBundle:Security:login") %}<!--/login-box-->
 
                                     {% include 'MSLUserBundle:Login:forgot.html.twig' %}<!--/forgot-box-->
 

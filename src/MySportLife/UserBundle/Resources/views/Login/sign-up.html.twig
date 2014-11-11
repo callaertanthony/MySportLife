@@ -9,32 +9,38 @@
             <div class="space-6"></div>
             <p> Enter your details to begin: </p>
 
-            <form />
+            <form action="{{ path('msl_user_login') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+            {{ form_start(form)}}
             <fieldset>
+                {{form_errors(form)}}
                 <label>
                     <span class="block input-icon input-icon-right">
-                        <input type="email" class="span12" placeholder="Email" />
+                        {{form_widget(form.email, {'attr': {'class': 'span12', 'placeholder' : 'Email'} })}}
+                        {#<input type="email" class="span12" placeholder="Email" />#}
                         <i class="icon-envelope"></i>
                     </span>
                 </label>
 
                 <label>
                     <span class="block input-icon input-icon-right">
-                        <input type="text" class="span12" placeholder="Username" />
+                        {{form_widget(form.username, {'attr': {'class': 'span12', 'placeholder' : 'Username'} })}}
+                        {#<input type="text" class="span12" placeholder="Username" />#}
                         <i class="icon-user"></i>
                     </span>
                 </label>
 
                 <label>
                     <span class="block input-icon input-icon-right">
-                        <input type="password" class="span12" placeholder="Password" />
+                        {{form_widget(form.plainPassword.first, {'attr': {'class': 'span12', 'placeholder' : 'Password'} })}}
+                        {#<input type="password" class="span12" placeholder="Password" />#}
                         <i class="icon-lock"></i>
                     </span>
                 </label>
 
                 <label>
                     <span class="block input-icon input-icon-right">
-                        <input type="password" class="span12" placeholder="Repeat password" />
+                        {{form_widget(form.plainPassword.second, {'attr': {'class': 'span12', 'placeholder' : 'Repeat password'} })}}
+                        {#<input type="password" class="span12" placeholder="Repeat password" />#}
                         <i class="icon-retweet"></i>
                     </span>
                 </label>
@@ -55,18 +61,19 @@
                         Reset
                     </button>
 
-                    <button onclick="return false;" class="width-65 pull-right btn btn-small btn-success">
+                    <button class="width-65 pull-right btn btn-small btn-success">
                         Register
                         <i class="icon-arrow-right icon-on-right"></i>
                     </button>
                 </div>
             </fieldset>
+            {{ form_end(form) }}
             </form>
         </div>
 
         <div class="toolbar center">
             <a href="#" onclick="show_box('login-box');
-                                                        return false;" class="back-to-login-link">
+                    return false;" class="back-to-login-link">
                 <i class="icon-arrow-left"></i>
                 Back to login
             </a>
